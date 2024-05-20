@@ -1,4 +1,4 @@
-# Heart_Disease_predictor
+# Heart Disease Predictor
 A web-based application designed to predict the likelihood of heart disease based on user input, utilizing machine learning for prediction and a user-friendly interface for data input and results display.
 ## Introduction
 The Disease Prediction Project is an application that predicts the likelihood of heart disease based on various health indicators. Users can input their health data, and the application will use a machine learning model to provide a prediction. The project aims to raise awareness about heart health and provide users with actionable insights.
