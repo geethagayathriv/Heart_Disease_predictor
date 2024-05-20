@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="\static\css\disease_prediction.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Get insights into what your sympotms could indicate...</h1>
+        <p>Fill this form and submit.</p>
+      </header>
+      <section>
+        <table>
+        <form action="/predict" method="post">
+          <tr><th><label for="highbp">Are you diagnosed with high blood pressure(HighBP)?</label><br /></th>
+          <td><input type="radio" id="yes" name="highbp" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="highbp" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="cholestrol">Does your medical tests indicate high cholestrol?</label><br /></th>
+          <td><input type="radio" id="yes" name="cholestrol" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="cholestrol" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="chol5">Did you get your cholestrol checked in the last 5 years?</label><br /></th>
+            <td><input type="radio" id="yes" name="chol5" value="1" />
+            <label for="yes">Yes</label><br />
+            <input type="radio" id="no" name="chol5" value="0" />
+            <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="bmi">Please enter your BMI:</label></th>
+            <td><input type="number" id="bmi" name="bmi" min="0" max="120" required><br /><br /></td></tr>
+          <tr><th><label for="smoke">Do you smoke?</label><br /></th>
+          <td><input type="radio" id="yes" name="smoke" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="smoke" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="heart">Have you had any history of heart attacks?</label><br /></th>
+          <td><input type="radio" id="yes" name="heart" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="heart" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="diabetes">Do you have diabetes?</label><br /></th>
+          <td><input type="radio" id="pre-diabetes" name="diabetes" value="1" />
+          <label for="yes">Pre-diabetes</label><br />
+          <input type="radio" id="yes" name="diabetes" value="2" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="diabetes" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="active">Do you consider yourself a physically active person?</label><br /></th>
+          <td><input type="radio" id="yes" name="active" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="active" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="fruits">Do you consume fruits daily?</label><br /></th>
+          <td><input type="radio" id="yes" name="fruits" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="fruits" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="vegetables">Do you eat vegetables daily?</label><br /></th>
+          <td><input type="radio" id="yes" name="vegetables" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="vegetables" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="alcohol">Do you consider yourself as a heavy alcohol consumer(more than 14 drinks per week)?</label><br /></th>
+          <td><input type="radio" id="yes" name="alcohol" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="alcohol" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="healthcare">Do you receive any kind of healthcare or have health insurance?</label><br /></th>
+          <td><input type="radio" id="yes" name="healthcare" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="healthcare" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="no_doc_visit">In the past 1 year, have you ever felt the need to visit a doctor but didn't due to economic hinderances?</label><br /></th>
+          <td><input type="radio" id="yes" name="no_doc_visit" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="no_doc_visit" value="0" />
+          <label for="no">No</label><br /><br /></td></tr>
+          <tr><th><label for="general_health">Rate your general health on a scale of 1 to 5.</label></th>
+          <td><input type="number" id="general_health" name="general_health" min="0" max="5" required><br /><br /></td></tr>
+          <tr><th><label for="mental_health">Consider the last 30 days, give us a count of the no.of days you had bad mental health.</label></th>
+          <td><input type="number" id="mental_health" name="mental_health" min="0" max="30" required><br /><br /></td></tr>
+          <tr><th><label for="physical_health">Consider the last 30 days, give us a count of the no.of days you had bad physical health.</label></th>
+          <td><input type="number" id="physical_health" name="physical_health" min="0" max="30" required><br /><br /></td></tr>
+          <tr><th><label for="stairs">Do you face difficulty while climbing stairs or walking?</label><br /></th>
+          <td><input type="radio" id="yes" name="stairs" value="1" />
+          <label for="yes">Yes</label><br />
+          <input type="radio" id="no" name="stairs" value="0" />
+          <label for="no">No</label><br /><br /></td></tr> 
+          <tr><th><label for="sex">Sex:</label><br /></th>
+          <td><input type="radio" id="male" name="sex" value="1" />
+          <label for="male">Male</label><br />
+          <input type="radio" id="female" name="sex" value="0" />
+          <label for="female">Female</label><br /><br /></td></tr>
+          <tr><th><label for="age">Choose your age range.</label><br /></th>
+          <td><input type="radio" id="yes" name="age" value="1" />
+          <label for="1824">18-24</label><br />
+          <input type="radio" id="no" name="age" value="2" />
+          <label for="2529">25-29</label><br /> 
+          <input type="radio" id="no" name="age" value="3" />
+          <label for="3034">30-34</label><br />
+          <input type="radio" id="no" name="age" value="4" />
+          <label for="3539">35-39</label><br /> 
+          <input type="radio" id="no" name="age" value="5" />
+          <label for="4044">40-44</label><br />
+          <input type="radio" id="no" name="age" value="6" />
+          <label for="4549">45-49</label><br />
+          <input type="radio" id="no" name="age" value="7" />
+          <label for="5054">50-54</label><br /> 
+          <input type="radio" id="no" name="age" value="8" />
+          <label for="5559">55-59</label><br />
+          <input type="radio" id="no" name="age" value="9" />
+          <label for="6064">60-64</label><br /> 
+          <input type="radio" id="no" name="age" value="10" />
+          <label for="6569">65-69</label><br />
+          <input type="radio" id="no" name="age" value="11" />
+          <label for="7074">70-74</label><br />
+          <input type="radio" id="no" name="age" value="12" />
+          <label for="7579">75-79</label><br />
+          <input type="radio" id="no" name="age" value="13" />
+          <label for="80">80 or older</label><br /><br /></td></tr> 
+          <tr><th>Click here to submit -></th><td><input type="submit" value="Submit" /></td></tr>
+        </form>
+        </table>
+      </section>
+      <footer>
+        <p>&copy; 2024 Heart Disease Prediction</p>
+      </footer>
+    </div>
+  </body>
+</html>
