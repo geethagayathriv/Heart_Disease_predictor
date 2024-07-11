@@ -11,3 +11,8 @@ The Disease Prediction Project is an application that predicts the likelihood of
 * Uvicorn
 ## Dataset
 The dataset was taken from kaggle.com - [Dataset](https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset)
+## Tech Stack
+* HTML
+* CSS
+* Model(logistic regression)
+* Fast API
